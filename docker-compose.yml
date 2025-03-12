@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    command: /bin/app
+    container_name: balancer
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "50051:50051"
+
